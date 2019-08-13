@@ -15,7 +15,7 @@ class NavMenu extends HTMLElement {
 		//CLASS VARIABLES
 		this.expanded = this.getAttribute("aria-expanded");
 		this.nav = clone.querySelector("nav");
-		this.list = clone.querySelector("ul");
+		// this.list = clone.querySelector("ul");
 
 		//EVENTS AND LISTENERS
 		this.nav.addEventListener("menuToggled", this.updateMenuVisibility);
@@ -28,9 +28,8 @@ class NavMenu extends HTMLElement {
 		} = event;
 
 		this.expanded = !this.expanded; //toggle true/false
+		
 		this.nav.setAttribute("aria-expanded", this.expanded); //update aria
-
-		this.list.classList.toggle(s.open); //toggles between visible/invisible
 	}
 }
 

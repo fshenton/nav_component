@@ -3,28 +3,34 @@
 .navMenu {
 	font-size: 16px;
 	font-family: sans-serif;
-
+	
 	.list {
-		visibility: hidden;
+		display: flex;
 		position: absolute;
+		flex-direction: column;
 		list-style-type: none;
-		transform: scaleY(0);
-		transition: transform 0.3s;
-
-		&.open {
-			visibility: visible;
-			transform: scaleY(1);
-			transform-origin: 50% 0%;
-		}
 
 		.listItem {
-			margin-top: 0.62em;
-			margin-left: 2.62em;
-			color: black;
-
-			::slotted(a) {
-				text-decoration: none;
-			}
+			flex: 1;
 		}
-	} 
+	}
+
+	&[aria-expanded="false"] .list{
+
+		.listItem {
+			opacity: 0;
+		}
+	}
+
+	&[aria-expanded="true"] .list{
+
+		.listItem {
+			opacity: 1;
+		}	
+	}
+
+	::slotted(a) {
+		text-decoration: none;
+	}
 }
+
