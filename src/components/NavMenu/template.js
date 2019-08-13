@@ -13,13 +13,13 @@ template.innerHTML = `
 			</span>
 		</menu-button>
 		<ul class="${s.list}">
-			<li>
+			<li class="${s.listItem}">
 				<slot name="list-item-1">List Item</slot>
 			</li>
-			<li>
+			<li class="${s.listItem}">
 				<slot name="list-item-2">List Item</slot>
 			</li>
-			<li>
+			<li class="${s.listItem}">
 				<slot name="list-item-3">List Item</slot>
 			</li>
 		</ul>

@@ -28,8 +28,7 @@ class MenuButton extends HTMLElement {
 		const { open : currOpen } = state;
 		const { target } = event;
 		
-		state.open = !currOpen;
-		console.log(state.open);
+		state.open = !currOpen; //toggle open/closed
 
 		target.classList.toggle(s.open);
 
