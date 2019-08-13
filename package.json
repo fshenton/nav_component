@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-dev": "cp -r src/index.html dist && webpack-dev-server --mode=development --open",
+    "build-dev-refresh": "cp -r src/index.html dist && webpack-dev-server --mode=development",
     "build-prod": "cp -r src/index.html dist && webpack --mode=production"
   },
   "repository": {

@@ -1,0 +1,67 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	padding: 1em 1.62em;
+	border: 1px solid;
+	font-size: 2em;
+	color: var(--color__fg);
+	background-color: var(--color__bg);
+	transition: background-color .15s;
+	--color__bg: black;
+	--color__fg: white;
+
+	::slotted(span){
+		pointer-events: none;
+	}
+
+	//Allow inversion of bar colors when hovered/not hovered
+	&:not(:hover) .bar {
+		background-color: var(--color__fg);
+	}
+
+	&:hover {
+		background-color: var(--color__fg);
+		color: var(--color__bg);
+
+		.bar {
+			background-color: var(--color__bg);
+		}
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.42);
+	}
+
+	//Transform bars from hamburger to X when button clicked
+	&.change {
+
+		.bar1 {
+		  	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+		  	transform: rotate(-45deg) translate(-9px, 6px);
+		}
+
+		.bar2 {
+			opacity: 0;
+		}
+
+		.bar3 {
+		  	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+		  	transform: rotate(45deg) translate(-8px, -8px);
+		}
+	}
+}
+
+	.icon {
+		display: inline-block;
+		margin-right: 1em; 
+		pointer-events: none;
+
+		.bar {
+			width: 35px;
+			height: 5px;
+			margin: 6px 0;
+			pointer-events: none;
+			transition: 0.4s;
+		}
+	}
