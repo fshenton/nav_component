@@ -1,3 +1,3 @@
-// import Gallery from "./components/Gallery/";
+import NavMenu from "./components/NavMenu/";
 
-// window.customElements.define("web-gallery", Gallery);
+window.customElements.define("nav-menu", NavMenu);
