@@ -1,7 +1,9 @@
 .navMenu {
-	visibility: hidden;
+	.list{
+		visibility: hidden;
 
-	&.open {
-		visibility: visible;
-	}
+		&.open {
+			visibility: visible;
+		}
+	} 
 }

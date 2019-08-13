@@ -9,19 +9,31 @@ class MenuButton extends HTMLElement {
 		const shadow = this.attachShadow({ "mode": "open" });
 		const clone = document.importNode(template.content, true);
 
-		console.log(clone);
-
 		//SET CLASS VARIABLES
 		const button = clone.querySelector("button");
+		this.state = {
+			open: false
+		};
+
+		//BINDING CLASS METHODS
+		this.toggleOpen = this.toggleOpen.bind(this, this.state);
 
 		//EVENTS
-		button.addEventListener("click", this.menuButtonPressed);
+		this.event = new CustomEvent("menuToggled", { bubbles: true, composed: true });
+		button.addEventListener("click", this.toggleOpen);
 
 		shadow.appendChild(clone);
 	}
-	menuButtonPressed(event){
-		//set the "change" class
-		event.target.classList.toggle(s.change);
+	toggleOpen(state, event){
+		const { open : currOpen } = state;
+		const { target } = event;
+		
+		state.open = !currOpen;
+		console.log(state.open);
+
+		target.classList.toggle(s.open);
+
+		target.dispatchEvent(this.event); //"menuToggled"
 	}
 }
 

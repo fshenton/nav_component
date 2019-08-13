@@ -7,6 +7,8 @@
 	color: var(--color__fg);
 	background-color: var(--color__bg);
 	transition: background-color .15s;
+	cursor: pointer;
+
 	--color__bg: black;
 	--color__fg: white;
 
@@ -34,7 +36,7 @@
 	}
 
 	//Transform bars from hamburger to X when button clicked
-	&.change {
+	&.open {
 
 		.bar1 {
 		  	-webkit-transform: rotate(-45deg) translate(-9px, 6px);

@@ -7,7 +7,12 @@ template.innerHTML = `
 		${styles.toString()};
 	</style>
 	<nav class="${s.navMenu}" aria-expanded="false">
-		<ul>
+		<menu-button>
+			<span slot="label">
+				MENU
+			</span>
+		</menu-button>
+		<ul class="${s.list}">
 			<li>
 				<slot name="list-item-1">List Item</slot>
 			</li>
