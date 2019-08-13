@@ -24,21 +24,22 @@ class NavMenu extends HTMLElement {
 		shadow.appendChild(clone);
 	}
 	connectedCallback(){
-		const toggleTimer = window.setInterval(this.toggleExpanded, 1000);
+		this.toggleExpanded();
+		// const toggleTimer = window.setInterval(this.toggleExpanded, 1000);
 	}
 	toggleExpanded(){
 		this.expanded = !this.expanded;
 		
 		this.nav.setAttribute("aria-expanded", this.expanded);
 
-		this.nav.dispatchEvent(this.event);
+		this.nav.dispatchEvent(this.event); //"menuToggled" on the nav element
 	}
 	updateMenuVisibility(event){
 		const {
-			target
+			target //(HTMLElement) nav
 		} = event;
 
-		target.classList.toggle(s.open);
+		target.classList.toggle(s.open); //toggles between visible/invisible
 	}
 }
 

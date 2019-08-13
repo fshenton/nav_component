@@ -8,9 +8,15 @@ template.innerHTML = `
 	</style>
 	<nav class="${s.navMenu}" aria-expanded="false">
 		<ul>
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
+			<li>
+				<slot name="list-item-1">List Item</slot>
+			</li>
+			<li>
+				<slot name="list-item-2">List Item</slot>
+			</li>
+			<li>
+				<slot name="list-item-3">List Item</slot>
+			</li>
 		</ul>
 	</nav>
 `;
